@@ -1,34 +1,34 @@
+import { type } from 'os';
 import {
   BaseEntity,
   Column,
   Entity,
   JoinColumn,
-  JoinTable,
   ManyToMany,
   PrimaryGeneratedColumn,
 } from 'typeorm';
-import { Actor } from '../actor/actor.entity';
+import { Movie } from '../movie/movie.entity';
 
-@Entity('movies')
-export class Movie extends BaseEntity {
+@Entity('actors')
+export class Actor extends BaseEntity {
   @PrimaryGeneratedColumn('increment')
   id: number;
 
   @Column({ type: 'varchar', unique: true, length: 100, nullable: false })
-  name: string;
+  names: string;
 
   @Column({ type: 'int', unique: false, nullable: false })
-  duration: number;
+  age: number;
 
   @Column({ type: 'text', unique: true, nullable: false })
-  sysnopsis: string;
+  photoURL: string;
 
   @ManyToMany(
-    type => Actor,
-    actor => actor.movies,
+    type => Movie,
+    movie => movie.actors,
   )
-  @JoinTable({ name: 'movie_actors' })
-  actors: Actor[];
+  @JoinColumn()
+  movies: Movie[];
 
   @Column({ type: 'varchar', default: 'ACTIVE', length: 8 })
   status: string;

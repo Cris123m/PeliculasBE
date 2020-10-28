@@ -6,9 +6,10 @@ import { ConfigModule } from './config/config.module';
 import { ConfigService } from './config/config.service';
 import { DatabaseModule } from './database/database.module';
 import { MovieModule } from './modules/movie/movie.module';
+import { ActorModule } from './modules/actor/actor.module';
 
 @Module({
-  imports: [ConfigModule, DatabaseModule, MovieModule],
+  imports: [ConfigModule, DatabaseModule, MovieModule, ActorModule],
   controllers: [AppController],
   providers: [AppService],
 })
