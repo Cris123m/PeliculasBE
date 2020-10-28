@@ -5,9 +5,12 @@ import {
   JoinColumn,
   JoinTable,
   ManyToMany,
+  ManyToOne,
+  OneToMany,
   PrimaryGeneratedColumn,
 } from 'typeorm';
 import { Actor } from '../actor/actor.entity';
+import { Genre } from '../genre/genre.entity';
 
 @Entity('movies')
 export class Movie extends BaseEntity {
@@ -22,6 +25,13 @@ export class Movie extends BaseEntity {
 
   @Column({ type: 'text', unique: true, nullable: false })
   sysnopsis: string;
+
+  @ManyToOne(
+    type => Genre,
+    genre => genre.movies,
+  )
+  @JoinColumn({ name: 'genre_id' })
+  genre: Genre;
 
   @ManyToMany(
     type => Actor,
