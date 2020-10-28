@@ -8,7 +8,7 @@ export class Movie extends BaseEntity {
   @Column({ type: 'varchar', unique: true, length: 100, nullable: false })
   name: string;
 
-  @Column({ type: 'int', unique: false, length: 3, nullable: false })
+  @Column({ type: 'int', unique: false, nullable: false })
   duration: number;
 
   @Column({ type: 'text', unique: true, nullable: false })
