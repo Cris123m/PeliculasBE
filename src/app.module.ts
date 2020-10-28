@@ -5,9 +5,10 @@ import { Configuration } from './config/config.keys';
 import { ConfigModule } from './config/config.module';
 import { ConfigService } from './config/config.service';
 import { DatabaseModule } from './database/database.module';
+import { MovieModule } from './modules/movie/movie.module';
 
 @Module({
-  imports: [ConfigModule, DatabaseModule],
+  imports: [ConfigModule, DatabaseModule, MovieModule],
   controllers: [AppController],
   providers: [AppService],
 })
