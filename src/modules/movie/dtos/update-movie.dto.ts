@@ -1,12 +1,12 @@
 import {
   IsArray,
+  IsNotEmpty,
   IsNumber,
   IsObject,
   IsString,
   MaxLength,
 } from 'class-validator';
-import { ReadActorDto } from '../../actor/dtos';
-import { ReadGenreDto } from '../../genre/dtos';
+import { Genre } from '../../genre/genre.entity';
 
 export class UpdateMovieDto {
   @IsString()
@@ -19,6 +19,6 @@ export class UpdateMovieDto {
   @IsString()
   readonly synopsis: string;
 
-  @IsNumber()
-  readonly genre_id: number;
+  @IsNotEmpty()
+  readonly genre: Genre;
 }

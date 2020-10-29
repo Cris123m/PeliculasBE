@@ -9,6 +9,7 @@ import { ActorRepository } from '../actor/actor.repository';
 import { CreateMovieDto, ReadMovieDto, UpdateMovieDto } from './dtos';
 import { Movie } from './movie.entity';
 import { MovieRepository } from './movie.repository';
+import { status } from '../../shared/entity-status.num';
 
 @Injectable()
 export class MovieService {
@@ -25,7 +26,7 @@ export class MovieService {
     }
 
     const movie = await this._movieRepository.findOne(id, {
-      where: { status: 'ACTIVE' },
+      where: { status: status.ACTIVE },
     });
 
     if (!movie) {
@@ -37,7 +38,7 @@ export class MovieService {
 
   async getAll(): Promise<ReadMovieDto[]> {
     const movies: Movie[] = await this._movieRepository.find({
-      where: { status: 'ACTIVE' },
+      where: { status: status.ACTIVE },
     });
 
     return movies.map((movie: Movie) => plainToClass(ReadMovieDto, movie));
@@ -53,7 +54,7 @@ export class MovieService {
     movie: Partial<UpdateMovieDto>,
   ): Promise<ReadMovieDto> {
     const foundMovie: Movie = await this._movieRepository.findOne(movieId, {
-      where: { status: 'ACTIVE' },
+      where: { status: status.ACTIVE },
     });
     if (!foundMovie) {
       throw new NotFoundException('This movie does not exist');
@@ -62,6 +63,7 @@ export class MovieService {
     foundMovie.name = movie.name;
     foundMovie.duration = movie.duration;
     foundMovie.synopsis = movie.synopsis;
+    foundMovie.genre = movie.genre;
     //foundMovie.genre = movie.genre;
 
     const updateMovie: Movie = await this._movieRepository.save(foundMovie);
@@ -71,19 +73,19 @@ export class MovieService {
 
   async delete(id: number): Promise<void> {
     const movieExist = await this._movieRepository.findOne(id, {
-      where: { status: 'ACTIVE' },
+      where: { status: status.ACTIVE },
     });
 
     if (!movieExist) {
       throw new NotFoundException();
     }
 
-    await this._movieRepository.update(id, { status: 'INACTIVE' });
+    await this._movieRepository.update(id, { status: status.INACTIVE });
   }
 
   async setActorToMovie(movieId: number, actorId: number): Promise<boolean> {
     const movieExist = await this._movieRepository.findOne(movieId, {
-      where: { status: 'ACTIVE' },
+      where: { status: status.ACTIVE },
     });
 
     if (!movieExist) {
@@ -91,14 +93,40 @@ export class MovieService {
     }
 
     const actorExist = await this._actorRepository.findOne(actorId, {
-      where: { status: 'ACTIVE' },
+      where: { status: status.ACTIVE },
     });
 
     if (!actorExist) {
-      throw new NotFoundException('Role does not exist');
+      throw new NotFoundException('Actor does not exist');
     }
 
     movieExist.actors.push(actorExist);
+    await this._movieRepository.save(movieExist);
+
+    return true;
+  }
+
+  async unsetActorToMovie(movieId: number, actorId: number): Promise<boolean> {
+    const movieExist = await this._movieRepository.findOne(movieId, {
+      where: { status: status.ACTIVE },
+    });
+
+    if (!movieExist) {
+      throw new NotFoundException();
+    }
+
+    const actorExist = await this._actorRepository.findOne(actorId, {
+      where: { status: status.ACTIVE },
+    });
+
+    if (!actorExist) {
+      throw new NotFoundException('Actor does not exist');
+    }
+
+    movieExist.actors = movieExist.actors.filter(function(actor) {
+      return actor.id != actorExist.id;
+    });
+
     await this._movieRepository.save(movieExist);
 
     return true;

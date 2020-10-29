@@ -46,10 +46,18 @@ export class MovieController {
   }
 
   @Post('setActor/:movieId/:actorId')
-  setRoleToUser(
+  setActorToUser(
     @Param('movieId', ParseIntPipe) movieId: number,
     @Param('actorId', ParseIntPipe) actorId: number,
   ): Promise<boolean> {
     return this._movieService.setActorToMovie(movieId, actorId);
+  }
+
+  @Post('unsetActor/:movieId/:actorId')
+  unsetActorToUser(
+    @Param('movieId', ParseIntPipe) movieId: number,
+    @Param('actorId', ParseIntPipe) actorId: number,
+  ): Promise<boolean> {
+    return this._movieService.unsetActorToMovie(movieId, actorId);
   }
 }
