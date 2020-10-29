@@ -26,11 +26,12 @@ export class Movie extends BaseEntity {
   duration: number;
 
   @Column({ type: 'text', unique: true, nullable: false })
-  sysnopsis: string;
+  synopsis: string;
 
   @ManyToOne(
     type => Genre,
     genre => genre.movies,
+    { eager: true },
   )
   @JoinColumn({ name: 'genre_id' })
   genre: Genre;
@@ -38,6 +39,7 @@ export class Movie extends BaseEntity {
   @ManyToMany(
     type => Actor,
     actor => actor.movies,
+    { eager: true },
   )
   @JoinTable({ name: 'movie_actors' })
   actors: Actor[];
