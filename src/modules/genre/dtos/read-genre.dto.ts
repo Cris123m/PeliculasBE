@@ -3,12 +3,11 @@ import { Exclude, Expose } from 'class-transformer';
 
 @Exclude()
 export class ReadGenreDto {
-  @Expose({ name: 'identificador' })
+  @Expose()
   @IsNumber()
   readonly id: number;
 
   @Expose()
   @IsString()
-  @MaxLength(45, { message: 'this name is not valid' })
   readonly nameGenre: string;
 }
