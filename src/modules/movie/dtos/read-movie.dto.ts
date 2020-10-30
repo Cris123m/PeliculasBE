@@ -1,13 +1,5 @@
-import {
-  IsNotEmpty,
-  IsNumber,
-  IsObject,
-  IsString,
-  MaxLength,
-} from 'class-validator';
-import { Exclude, Expose, Type } from 'class-transformer';
-import { ReadGenreDto } from '../../genre/dtos';
-import { ReadActorDto } from '../../actor/dtos';
+import { IsNotEmpty, IsNumber, IsString } from 'class-validator';
+import { Exclude, Expose } from 'class-transformer';
 import { Genre } from '../../genre/genre.entity';
 import { Actor } from 'src/modules/actor/actor.entity';
 

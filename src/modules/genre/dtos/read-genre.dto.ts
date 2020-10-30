@@ -1,4 +1,4 @@
-import { IsNumber, IsString, MaxLength } from 'class-validator';
+import { IsNumber, IsString } from 'class-validator';
 import { Exclude, Expose } from 'class-transformer';
 
 @Exclude()
