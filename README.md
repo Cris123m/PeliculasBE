@@ -1,3 +1,27 @@
+# Backend de proyecto de prueba de Películas </br>
+Autor: Cristofer Machado </br>
+## Requisitos
+- Mysql
+- NodeJs
+- npm
+## Instrucciones 
+- Clonar o descargar el proyecto desde Github.
+- En mysql generar una nueva base de datos llamado películas.
+- Dentro de la carpeta databaseExample encontrará un archivo sql llamado peliculas, utilizar el mismo para restaurar la base de datos.
+- En el terminal, ubicarse en la carpeta del proyecto.
+- Utilizar el siguiente comando para instalar las dependencias:
+```bash
+$ npm install
+```
+- Una vez instalado, correr el backend con este comando:
+```bash
+$ npm run start:dev
+```
+## Nota:
+- Por defecto está configurado para conectarse a mysql por el puerto 3306 por el localhost.
+- En el caso de requerirlo puede cambiar los atributos de conexión en los archivos: orm.config.json y el puerto dentro de /src/database/database.service.ts línea 16.
+- Para comprobar, una vez que el programa esté corriendo, en la URL se dirige a: http://localhost:5000/api/movies
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
 </p>
