@@ -13,6 +13,9 @@ import {
 import { Actor } from '../actor/actor.entity';
 import { Genre } from '../genre/genre.entity';
 
+//Entidad en la que se define los tipos de datos de los atributos
+//en cada objeto, y las relaciones entre ellos, usado tanto
+//para las migraciones para como los datos a ser expuestos
 @Entity('movies')
 export class Movie extends BaseEntity {
   @PrimaryGeneratedColumn('increment')

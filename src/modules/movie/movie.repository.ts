@@ -3,3 +3,4 @@ import { Movie } from './movie.entity';
 
 @EntityRepository(Movie)
 export class MovieRepository extends Repository<Movie> {}
+//Repositorio que vincula a la película

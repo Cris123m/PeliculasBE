@@ -6,6 +6,7 @@ import { MovieService } from './movie.service';
 import { MovieController } from './movie.controller';
 import { ActorRepository } from '../actor/actor.repository';
 
+//Módulo para la gestión de Películas
 @Module({
   imports: [
     TypeOrmModule.forFeature([MovieRepository, ActorRepository]),

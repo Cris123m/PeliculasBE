@@ -3,3 +3,4 @@ import { Genre } from './genre.entity';
 
 @EntityRepository(Genre)
 export class GenreRepository extends Repository<Genre> {}
+//Repositorio que vincula al género

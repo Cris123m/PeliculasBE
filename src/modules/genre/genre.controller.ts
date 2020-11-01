@@ -11,6 +11,8 @@ import {
 import { GenreService } from './genre.service';
 import { CreateGenreDto, ReadGenreDto, UpdateGenreDto } from './dtos';
 
+//Controlador en la que configura los parámetros de conexión al Backend
+//por los diferentes métodos GET,POST,PATCH
 @Controller('genres')
 export class GenreController {
   constructor(private readonly _genreService: GenreService) {}

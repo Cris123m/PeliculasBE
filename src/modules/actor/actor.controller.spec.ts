@@ -1,6 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { ActorController } from './actor.controller';
 
+//Controlador para pruebas unitarias
 describe('ActorController', () => {
   let controller: ActorController;
 

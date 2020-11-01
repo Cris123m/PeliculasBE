@@ -10,10 +10,10 @@ export const databaseProviders = [
     inject: [ConfigService],
     async useFactory(config: ConfigService) {
       return {
-        //ssl: true,
-        type: 'mysql' as 'mysql',
+        //ssl: true, //Quitar comentario en caso de usar una conexión segura con ssl
+        type: 'mysql' as 'mysql', //Dato quemado mysql, cambiar en caso de usar con otra base de datos por ejemplo (postgresql)
         host: config.get(Configuration.HOST),
-        port: 3306,
+        port: 3306, //Puerto de conexión a la base de datos, cambiar de ser necesario
         database: config.get(Configuration.DATABASE),
         username: config.get(Configuration.USERNAME),
         password: config.get(Configuration.PASSWORD),

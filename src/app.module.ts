@@ -9,8 +9,15 @@ import { MovieModule } from './modules/movie/movie.module';
 import { ActorModule } from './modules/actor/actor.module';
 import { GenreModule } from './modules/genre/genre.module';
 
+//Módulo global en que se determina todos los módulos usados en la API
 @Module({
-  imports: [ConfigModule, DatabaseModule, MovieModule, ActorModule, GenreModule],
+  imports: [
+    ConfigModule,
+    DatabaseModule,
+    MovieModule,
+    ActorModule,
+    GenreModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })

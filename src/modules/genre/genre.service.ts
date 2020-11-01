@@ -9,7 +9,9 @@ import { CreateGenreDto, ReadGenreDto, UpdateGenreDto } from './dtos';
 import { Genre } from './genre.entity';
 import { GenreRepository } from './genre.repository';
 
-//return plainToClass();
+//Servicios de Género
+//Donde se encuentran las acciones a realizar por cada petición
+//a cada uno de los métodos para el CRUD
 @Injectable()
 export class GenreService {
   constructor(

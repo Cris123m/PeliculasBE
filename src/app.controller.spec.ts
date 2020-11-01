@@ -2,6 +2,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
+//Controlador para pruebas unitarias en toda la app
 describe('AppController', () => {
   let appController: AppController;
 

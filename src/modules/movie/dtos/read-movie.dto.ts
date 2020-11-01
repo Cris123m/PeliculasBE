@@ -3,6 +3,7 @@ import { Exclude, Expose } from 'class-transformer';
 import { Genre } from '../../genre/genre.entity';
 import { Actor } from 'src/modules/actor/actor.entity';
 
+//Dto de los datos a ser expuestos al leer Película
 @Exclude()
 export class ReadMovieDto {
   @Expose()

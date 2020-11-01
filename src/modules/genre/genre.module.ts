@@ -5,6 +5,7 @@ import { GenreRepository } from './genre.repository';
 import { GenreService } from './genre.service';
 import { GenreController } from './genre.controller';
 
+//Módulo para la gestión de Género
 @Module({
   imports: [TypeOrmModule.forFeature([GenreRepository]), SharedModule],
   providers: [GenreService],

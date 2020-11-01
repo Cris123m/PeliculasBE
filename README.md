@@ -1,25 +1,35 @@
 # Backend de proyecto de prueba de Películas </br>
+
 Autor: Cristofer Machado </br>
+
 ## Requisitos
+
 - Mysql
 - NodeJs
 - npm
-## Instrucciones 
+
+## Instrucciones
+
 - Clonar o descargar el proyecto desde Github.
 - En mysql generar una nueva base de datos llamado películas.
 - Dentro de la carpeta databaseExample encontrará un archivo sql llamado peliculas, utilizar el mismo para restaurar la base de datos.
 - En el terminal, ubicarse en la carpeta del proyecto.
 - Utilizar el siguiente comando para instalar las dependencias:
+
 ```bash
 $ npm install
 ```
+
 - Una vez instalado, correr el backend con este comando:
+
 ```bash
 $ npm run start:dev
 ```
+
 ## Nota:
+
 - Por defecto está configurado para conectarse a mysql por el puerto 3306 por el localhost.
-- En el caso de requerirlo puede cambiar los atributos de conexión en los archivos: orm.config.json y el puerto dentro de /src/database/database.service.ts línea 16.
+- En el caso de requerirlo puede cambiar los atributos de conexión en los archivos: orm.config.json, .env y el puerto dentro de /src/database/database.service.ts línea 16.
 - Para comprobar, una vez que el programa esté corriendo, en la URL se dirige a: http://localhost:5000/api/movies
 
 <p align="center">
@@ -30,7 +40,7 @@ $ npm run start:dev
 [travis-url]: https://travis-ci.org/nestjs/nest
 [linux-image]: https://img.shields.io/travis/nestjs/nest/master.svg?label=linux
 [linux-url]: https://travis-ci.org/nestjs/nest
-  
+
   <p align="center">A progressive <a href="http://nodejs.org" target="blank">Node.js</a> framework for building efficient and scalable server-side applications, heavily inspired by <a href="https://angular.io" target="blank">Angular</a>.</p>
     <p align="center">
 <a href="https://www.npmjs.com/~nestjscore"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
@@ -96,4 +106,4 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 
 ## License
 
-  Nest is [MIT licensed](LICENSE).
+Nest is [MIT licensed](LICENSE).

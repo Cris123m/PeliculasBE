@@ -11,6 +11,8 @@ import {
 import { ActorService } from './actor.service';
 import { CreateActorDto, ReadActorDto, UpdateActorDto } from './dtos';
 
+//Controlador en la que configura los parámetros de conexión al Backend
+//por los diferentes métodos GET,POST,PATCH
 @Controller('actors')
 export class ActorController {
   constructor(private readonly _actorService: ActorService) {}

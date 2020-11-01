@@ -5,3 +5,4 @@ export enum Configuration {
   PASSWORD = 'PASSWORD',
   DATABASE = 'DATABASE',
 }
+//Key que indican al sistema de dónde obtener cada atributo de la conexión

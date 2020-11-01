@@ -11,6 +11,8 @@ import {
 import { MovieService } from './movie.service';
 import { CreateMovieDto, ReadMovieDto, UpdateMovieDto } from './dtos';
 
+//Controlador en la que configura los parámetros de conexión al Backend
+//por los diferentes métodos GET,POST,PATCH
 @Controller('movies')
 export class MovieController {
   constructor(private readonly _movieService: MovieService) {}

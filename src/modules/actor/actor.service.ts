@@ -9,7 +9,9 @@ import { CreateActorDto, ReadActorDto, UpdateActorDto } from './dtos';
 import { Actor } from './actor.entity';
 import { ActorRepository } from './actor.repository';
 
-//return plainToClass();
+//Servicios de actor
+//Donde se encuentran las acciones a realizar por cada petición
+//a cada uno de los métodos para el CRUD
 @Injectable()
 export class ActorService {
   constructor(

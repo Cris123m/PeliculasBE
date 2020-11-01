@@ -6,3 +6,4 @@ import { databaseProviders } from './database.service';
   exports: [...databaseProviders],
 })
 export class DatabaseModule {}
+//Módulo de imporación y exportación del proveedor de la base de datos

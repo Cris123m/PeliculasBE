@@ -10,6 +10,9 @@ import {
 } from 'typeorm';
 import { Movie } from '../movie/movie.entity';
 
+//Entidad en la que se define los tipos de datos de los atributos
+//en cada objeto, y las relaciones entre ellos, usado tanto
+//para las migraciones para como los datos a ser expuestos
 @Entity('genres')
 export class Genre extends BaseEntity {
   @PrimaryGeneratedColumn('increment')

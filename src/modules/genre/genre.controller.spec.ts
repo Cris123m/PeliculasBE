@@ -1,6 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { GenreController } from './genre.controller';
 
+//Controlador para pruebas unitarias
 describe('GenreController', () => {
   let controller: GenreController;
 

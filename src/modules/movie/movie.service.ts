@@ -11,6 +11,9 @@ import { Movie } from './movie.entity';
 import { MovieRepository } from './movie.repository';
 import { status } from '../../shared/entity-status.num';
 
+//Servicios de películas
+//Donde se encuentran las acciones a realizar por cada petición
+//a cada uno de los métodos para el CRUD
 @Injectable()
 export class MovieService {
   constructor(

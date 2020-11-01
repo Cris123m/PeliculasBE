@@ -1,6 +1,8 @@
 import * as fs from 'fs';
 import { parse } from 'dotenv';
 
+//Servicio de configuración para la conexión con la base de datos
+//Los atributos de conexión se encuentra dentro del archivo .env en la raiz del proyecto
 export class ConfigService {
   private readonly envConfig: { [key: string]: string };
 

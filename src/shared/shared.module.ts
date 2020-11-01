@@ -6,3 +6,4 @@ import { Module } from '@nestjs/common';
   providers: [],
 })
 export class SharedModule {}
+//Módulo compartido para cada uno de los objetos

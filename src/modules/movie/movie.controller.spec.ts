@@ -1,6 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { MovieController } from './movie.controller';
 
+//Controlador para pruebas unitarias
 describe('MovieController', () => {
   let controller: MovieController;
 
