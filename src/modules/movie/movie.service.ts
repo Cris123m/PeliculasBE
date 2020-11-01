@@ -64,6 +64,7 @@ export class MovieService {
     foundMovie.duration = movie.duration;
     foundMovie.synopsis = movie.synopsis;
     foundMovie.genre = movie.genre;
+    foundMovie.actors = movie.actors;
     //foundMovie.genre = movie.genre;
 
     const updateMovie: Movie = await this._movieRepository.save(foundMovie);

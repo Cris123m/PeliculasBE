@@ -1,5 +1,6 @@
 import { IsNotEmpty, IsNumber, IsString, MaxLength } from 'class-validator';
 import { Genre } from '../../genre/genre.entity';
+import { Actor } from '../../actor/actor.entity';
 
 export class UpdateMovieDto {
   @IsString()
@@ -14,4 +15,7 @@ export class UpdateMovieDto {
 
   @IsNotEmpty()
   readonly genre: Genre;
+
+  @IsNotEmpty()
+  readonly actors: Actor[];
 }
